@@ -1,0 +1,18 @@
+﻿
+@{
+    Layout = "~/Views/BaseStyle.cshtml";
+    ViewBag.Title = "Подтверждение";
+}
+<body>
+    <div class="divs">
+        <h2>Подтверждение почты</h2>
+        <form action="/Base/Confirmation" method="post">
+            <p>Для подтверждения почты вам было отправлено письмо с кодом.</p>
+            <input type="text" name="codeInSite" placeholder="Код из письма" class="inputs" />
+            </br>
+            </br>
+            <input type="submit" value="Подтвердить" class="buttons" />
+        </form>
+        <a class="links" href="~/Base/Registration" title="Регистрация">Регистрация</a>
+    </div>
+</body>

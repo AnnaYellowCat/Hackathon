@@ -1,0 +1,47 @@
+﻿@model Khacaton.Models.Achievements
+
+@{
+    Layout = "~/Views/BaseStyle.cshtml";
+    ViewBag.Title = "Достижения";
+}
+<body>
+    <div class="divs_no_back">
+        <div class="divs_titles">
+            <h1>Полученные достижения</h1>
+        </div>
+        @foreach (var achievement in Model.lstMy)
+        {
+            <div class="divs_items">
+                <img src="@achievement.image" class="ach_img">
+                <div>
+                    <div class="divs_items_title">
+                        <h3 class="ach_h3">@achievement.title</h3>
+                        <h4>+</h4>
+                        <h4>@achievement.reward</h4>
+                    </div>
+                    <p class="ach_p">@achievement.description</p>
+                </div>
+            </div>
+        }
+        </br>
+        <div class="divs_titles">
+            <h1>Неполученные достижения</h1>
+        </div>
+        @foreach (var achievement in Model.lstDiff)
+        {
+            <div class="divs_items">
+                <img src="~/Images/notReceived.png" class="ach_img">
+                <div>
+                    <div class="divs_items_title">
+                        <h3 class="ach_h3">???</h3>
+                        <h4>+</h4>
+                        <h4>@achievement.reward</h4>
+                    </div>
+                    <p class="ach_p">@achievement.description</p>
+                </div>
+            </div>
+        }
+        </br>
+        <a class="links" href="~/Base/Profile" title="Личный кабинет">На главную</a>
+    </div>
+</body>

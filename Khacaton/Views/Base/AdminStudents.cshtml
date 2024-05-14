@@ -1,0 +1,84 @@
+﻿@model IEnumerable<Khacaton.Models.Students>
+@{
+    Layout = "~/Views/BaseStyle.cshtml";
+    ViewBag.Title = "Студенты";
+}
+<body>
+    <a href="Create" class="links">Создать студента</a>
+    <table border="3" cellpadding="6" cellspacing="0" width=100% class="tables">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.numStud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Groups.direction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Groups.spec)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Groups.course)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Groups.number)
+            </th>
+            <th></th>
+        </tr>
+
+        <h2>Список студентов</h2>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.numStud)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.lastname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Groups.direction)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Groups.spec)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Groups.course)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Groups.number)
+                </td>
+                <td>
+                    <button class="buttons" onclick="location.href='@Url.Action("AdminEdit", "Base", new { studId = item.numStud })';return false;">Изменить</button>
+                    @using (Html.BeginForm("Delete", "Base"))
+                    {
+                        @Html.Hidden("studId", item.numStud)
+                        <input class="buttons" type="submit" value="Удалить" />
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    <a href="/Base/AdminPage" class="links">На главную</a>
+</body>

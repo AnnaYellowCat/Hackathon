@@ -1,0 +1,50 @@
+﻿@model IEnumerable<Khacaton.Models.StudentsAndAchievements>
+@{
+    Layout = "~/Views/BaseStyle.cshtml";
+    ViewBag.Title = "Заявки";
+}
+
+<body>
+    <div>
+        <h2>Заявки</h2>
+        <table border="3" cellpadding="6" cellspacing="0" width="100%" class="tables">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Accounts.idStudent)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Achievements.title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Achievements.description)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Accounts.idStudent)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Achievements.title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Achievements.description)
+                    </td>
+                    <td>
+                        @using (Html.BeginForm("RequestAch", "Base"))
+                        {
+                            @Html.Hidden("achId", item.id)
+                            <input type="submit" value="Принять" class="links" />
+                        }
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+        <a class="links" href="~/Base/AdminPage" title="Назад">Назад</a>
+    </div>
+</body>

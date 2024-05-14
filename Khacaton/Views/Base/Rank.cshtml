@@ -1,0 +1,39 @@
+﻿@model Khacaton.Models.Accounts
+@{
+    Layout = "~/Views/BaseStyle.cshtml";
+    ViewBag.Title = "Рейтинг студентов";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Rank</title>
+</head>
+<body>
+    <div>
+        <div class="divs_no_back">
+            <div class="divs_titles">
+                <h1>Рейтинг студентов</h1>
+            </div>
+            @foreach (var account in Model.lst)
+            {
+                <div class="divs">
+                    <div>
+                        <div>
+                            <h3 class="ach_h3">Место №@account.myPosition - @account.Students.numStud</h3>
+                            <h4>@account.Students.surname @account.Students.name @account.Students.lastname</h4>
+                            <h4>Почта: @account.Students.email</h4>
+                            <h4>Группа: @account.Students.Groups.direction-@account.Students.Groups.spec-@account.Students.Groups.course@account.Students.Groups.number</h4>
+                            <h4>Очки: @account.points</h4>
+                        </div>
+                    </div>
+                </div>
+            }
+            </br>
+            <a class="links" href="/Base/AdminPage" title="Назад">Назад</a>
+        </div>
+    </div>
+</body>
+</html>

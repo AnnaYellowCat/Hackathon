@@ -1,0 +1,88 @@
+﻿@model IEnumerable<Khacaton.Models.Accounts>
+@{
+    Layout = "~/Views/BaseStyle.cshtml";
+    ViewBag.Title = "Аккаунты";
+}
+<body>
+    <h2>Зарегистрированные студенты</h2>
+    <table border="3" cellpadding="6" cellspacing="0" width=100% class="tables">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Students.numStud)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students.surname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students.lastname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students.email)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students.Groups.direction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students.Groups.spec)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students.Groups.course)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Students.Groups.number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.points)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Students.numStud)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Students.surname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Students.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Students.lastname)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Students.email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Students.Groups.direction)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Students.Groups.spec)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Students.Groups.course)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Students.Groups.number)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.points)
+                </td>
+                <td>
+                    @using (Html.BeginForm("AchievementsNastya", "Base"))
+                    {
+                        @Html.Hidden("studId", item.Students.numStud)
+                        <input type="submit" value="Достижения" class="buttons" />
+                    }
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    <a href="/Base/AdminPage" class="links">Назад</a>
+</body>

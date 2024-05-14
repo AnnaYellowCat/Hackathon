@@ -1,0 +1,42 @@
+﻿@model IEnumerable<Khacaton.Models.Achievements>
+@{
+    Layout = "~/Views/BaseStyle.cshtml";
+    ViewBag.Title = "Достижения студента";
+}
+<body>
+    <h2>Достижения студента</h2>
+    <table border="3" cellpadding="6" cellspacing="0" width=100% class="tables">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.reward)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.reward)
+                </td>
+                <td>
+                    <button class="buttons" onclick="location.href='@Url.Action("AdminAchievements", "Base", new { studId = ViewBag.student.numStud, achId=item.id})';return false;">Засчитать</button>
+                </td>
+            </tr>
+        }
+    </table>
+    <br />
+    <a class="links" href="/Base/AdminAccounts">Назад</a>
+</body>

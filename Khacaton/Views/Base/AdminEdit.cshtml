@@ -1,0 +1,27 @@
+﻿@model Khacaton.Models.Students
+@{
+    Layout = "~/Views/BaseStyle.cshtml";
+    ViewBag.Title = "Добавление студента";
+}
+<body>
+    <h2>Добавление студента</h2>
+    <div class="edit_divs">
+        <p>@ViewBag.ErrorMessage</p>
+        @using (Html.BeginForm("AdminEdit", "Base"))
+        {
+            <p>Номер студенческого: @Html.TextBoxFor(x => x.numStud)</p>
+            <p>Фамилия: @Html.TextBoxFor(x => x.surname)</p>
+            <p>Имя: @Html.TextBoxFor(x => x.name)</p>
+            <p>Отчество: @Html.TextBoxFor(x => x.lastname)</p>
+            <p>Email: @Html.TextBoxFor(x => x.email)</p>
+            <p>Направление: @Html.TextBoxFor(x => x.Groups.direction)</p>
+            <p>Специальность: @Html.TextBoxFor(x => x.Groups.spec)</p>
+            <p>Курс: @Html.TextBoxFor(x => x.Groups.course)</p>
+            <p>Номер группы: @Html.TextBoxFor(x => x.Groups.number)</p>
+            <input class="buttons" type="submit" value="Сохранить" />
+            <br />
+            <br />
+            <a class="links" href="/Base/AdminStudents">Отменить изменения и вернуться к списку</a>
+        }
+    </div>
+</body>

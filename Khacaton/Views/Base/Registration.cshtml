@@ -1,0 +1,17 @@
+﻿@{ 
+    Layout = "~/Views/BaseStyle.cshtml";
+    ViewBag.Title = "Регистрация";
+}
+<body>
+    <div class="divs">
+        <h2>Регистрация</h2>
+        <form action="/Base/Registration" method="post">
+            <input type="text" name="idStudent" placeholder="Номер студ. билета" class="inputs">
+            </br>
+            <input type="text" name="password" placeholder="Пароль" class="inputs">
+            </br>
+            </br>
+            <input type="submit" value="Зарегистрироваться" class="buttons" />
+        </form>
+    </div>
+</body>

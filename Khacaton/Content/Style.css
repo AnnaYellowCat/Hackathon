@@ -1,0 +1,338 @@
+﻿body {
+    margin: 0px;
+    text-align: center;
+    font-family: 'Ralewey', sans-serif;
+    background-color: #755885;
+}
+
+hr {
+    border: solid 1px white;
+}
+
+
+h1 {
+    color: #a672b6;
+    font-weight: 900;
+    font-size: 32px;
+}
+
+h2 {
+    color: #af82bd;
+    font-weight: 700;
+    font-size: 28px;
+}
+
+h3 {
+    color: #af82bd;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+h4 {
+    color: #744b80;
+    font-size: 18px;
+}
+
+p {
+    color: #19151a;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.divs {
+    margin: 10% auto 0px auto;
+    padding: 1.5%;
+    width: 300px;
+    border-radius: 30px;
+    background-color: #f6f8f7;
+}
+
+.inputs {
+    width: 200px;
+    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: #ebebeb;
+    border-width: 2px;
+    font-size: 16px;
+    background-color: #ebebeb;
+}
+
+.buttons {
+    width: 224px;
+    margin-bottom: 50px;
+    padding: 10px;
+    border-radius: 10px;
+    border: solid;
+    border-color: #cfaeda;
+    border-width: 2px;
+    font-size: 16px;
+    background-color: #cfaeda;
+    color: #f6f8f7;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+    .buttons:hover {
+        background-color: #af82bd;
+        border-color: #af82bd;
+    }
+
+.links {
+    display: block;
+    width: 200px;
+    padding: 10px;
+    margin: 0px auto 20px auto;
+    border-radius: 10px;
+    border: solid;
+    border-color: #cfaeda;
+    border-width: 2px;
+    font-size: 16px;
+    background-color: #cfaeda;
+    color: #f6f8f7;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+    .links:hover {
+        background-color: #af82bd;
+        border-color: #af82bd;
+    }
+
+
+header {
+    background-color: #cfaeda;
+    height: 55px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+    #profile_logo {
+        display: block;
+        width: 450px;
+        margin: 10px 0px 0px 10px;
+        font-size: 16px;
+        text-align: left;
+        background-image: url("/Images/logo.png");
+        background-repeat: no-repeat;
+        background-position: 15px 5px;
+        padding-left: 100px;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    #profile_menu {
+        margin: 10px 10px 10px 0px;
+        display: flex;
+        gap: 30px;
+    }
+
+        .profile_links {
+            display: block;
+            justify-content: space-between;
+            width: fit-content;
+            text-decoration: none;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+.profile_divs {
+    width: 85%;
+    border-radius: 15px;
+    background-color: #f6f8f7;
+    margin: 20px auto;
+    padding: 1px;
+}
+    
+    #profile_cover {
+        display: flex;
+        gap: 25px;
+        justify-content: center;
+        margin: 30px 0px;
+    }
+
+        #avatar_div {
+            height: 225px;
+            width:  225px;
+            border-radius: 15px;
+            background-color: #cfaeda;
+        }
+        
+            #avatar {
+                width: 125px;
+                height: 125px;
+                margin: 20% auto;
+                background-image: url("/Images/avatar.png");
+                background-size: contain;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+
+        #cover {
+            height: 225px;
+            width: 60%;
+            border-radius: 15px;
+            background-color: #e4d4e9;
+            position: relative;
+        }
+
+            #profile_points {
+                justify-content: right;
+                height: 75px;
+                position: absolute;
+                top: 10px;
+                right: 20px;
+            }
+
+                .profile_points_inner {
+                    display: flex;
+                    gap: 15px;
+                    height: 50px;
+                    width: 100%;
+                    padding: 10px;
+                }
+
+                .points {
+                    margin: 0px;
+                    color: #a672b6;
+                    font-weight: 800;
+                    font-size: 20px;
+                }
+
+            #profile_data_name {
+                font-size: 23px;
+                color: #a672b6;
+                font-weight: 700;
+            }
+
+            #profile_data_values {
+                font-size: 18px;
+                margin-top: -15px;
+            }
+
+            .profile_p {
+                word-wrap: break-word;
+                padding: 0px 14%;
+            }
+
+    #profile_achievements_buttons {
+        display: flex;
+        width: 40%;
+        margin: auto;
+    }
+
+.divs_no_back {
+    margin: 50px auto;
+    width: 1000px;
+}
+
+    .divs_items {
+        display: flex;
+        margin: 50px auto;
+        padding: 1.5%;
+        border-radius: 30px;
+        background-color: #f6f8f7;
+    }
+
+        .divs_items_title {
+            display: flex;
+        }
+
+        .ach_h3 {
+            margin-right: 10px;
+        }
+
+        .ach_p {
+            text-align: left;
+        }
+
+        .ach_img {
+            width: 12%;
+            height: 12%;
+            margin: auto 0px;
+            padding-right: 30px;
+            padding-left: 30px;
+        }
+
+        #balance_div {
+            height: 50px;
+            border-radius: 25px;
+            background-color: #e4d4e9;
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            padding-bottom: 30px;
+            margin-top: -10px;
+        }
+
+        #balance_img {
+            width: 70px;
+            height: 70px;
+        }
+
+        #award_h3 {
+            margin-left: 30px;
+            margin-right: 15px;
+        }
+
+        .award_p {
+            margin-top: 6px;
+            margin-left: 15px;
+            margin-right: 15px
+        }
+
+        #award_form {
+            margin: auto 10px 0px auto;
+        }
+
+        #okno {
+            position: absolute;
+            bottom: 0px;
+            display: none;
+            background-color: #e4d4e98a;
+            width: 100%;
+            height: 100%;
+        }
+
+            #okno:target {
+                display: block;
+            }
+
+            #okno_inner {
+                padding: 1.5%;
+                margin: 15% auto;
+                border-radius: 30px;
+                background-color: #f6f8f7;               
+                width: 300px;
+                height: 200px;                      
+                box-shadow: 0 4px 10px #744b8085;
+            }
+
+.addAchiv_h4 {
+    margin: 0px 0px 5px 0px;
+}
+
+.tables {
+    -webkit-border-radius: 10px;
+    overflow: hidden border: 1px solid #fff;
+    background-color: #f6f8f7;
+}
+
+.edit_divs {
+    margin: 50px auto;
+    padding: 1.5%;
+    width: 400px;
+    border-radius: 30px;
+    background-color: #f6f8f7;
+}
+
+.divs_titles {
+    width: 1000px;
+    padding: 1px 0px;
+    border-radius: 30px;
+    background-color: #f6f8f7;
+}

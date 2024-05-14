@@ -1,0 +1,21 @@
+﻿@{
+    Layout = "~/Views/BaseStyle.cshtml";
+    ViewBag.Title = "Вход";
+}
+<body>
+    <div class="divs">
+        <h2>Вход в профиль</h2>
+        <p>@ViewBag.ErrorMessage</p>
+        <form method="post" action="/Base/Login">
+            <input class="inputs" type="text" name="idStudent" value="" placeholder="Логин" required/>
+            <br />
+            <input class="inputs" type="text" name="password" value="" placeholder="Пароль" required/>
+            <br />
+            <input class="buttons" type="submit" value="Войти" />
+        </form>
+        <br />
+        <br />
+        <a class="links" href="~/Base/Registration" title="Регистрация">Регистрация</a>
+    </div>
+</body>
+

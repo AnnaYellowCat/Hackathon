@@ -1,0 +1,70 @@
+﻿@model Khacaton.Models.Accounts 
+@{
+    Layout = "~/Views/BaseStyle.cshtml";
+    ViewBag.Title = "Профиль";
+}
+<body>
+    <div>
+        <header>
+            <a id="profile_logo" href="https://www.sstu.ru/" title="СГТУ" target="_blank">Саратовский государственный технический университет имени Гагарина Ю.А.</a>
+            <div id="profile_menu">
+                <a class="profile_links" href="https://rasp.sstu.ru/?_gl=1*16pll8i*_ga*MjA5NjYzNjcwMi4xNzE1NTg3MDM3*_ga_V2MVWTW204*MTcxNTU4NzAzNy4xLjEuMTcxNTU4NzM4Ny4wLjAuMA.." title="Расписание" target="_blank">Расписание</a>
+                <a class="profile_links" href="https://portal3.sstu.ru/?_gl=1*885tfg*_ga*MjA5NjYzNjcwMi4xNzE1NTg3MDM3*_ga_V2MVWTW204*MTcxNTU4NzAzNy4xLjEuMTcxNTU4NzE2Mi4wLjAuMA.." title="ИОС" target="_blank">Инфопортал [ИОС]</a>
+                <a class="profile_links" href="https://tst-dev.sstu.ru/?_gl=1*885tfg*_ga*MjA5NjYzNjcwMi4xNzE1NTg3MDM3*_ga_V2MVWTW204*MTcxNTU4NzAzNy4xLjEuMTcxNTU4NzE2Mi4wLjAuMA.." title="Дистанционное обучение" target="_blank">Дистанционное обучение</a>
+                <a class="profile_links" href="https://do.sstu.ru/?_gl=1*136f7d9*_ga*MjA5NjYzNjcwMi4xNzE1NTg3MDM3*_ga_V2MVWTW204*MTcxNTU4NzAzNy4xLjEuMTcxNTU4NzM4Ny4wLjAuMA.." title="Дополнительное образование" target="_blank">Дополнительное образование</a>
+            </div>
+        </header>
+
+        <div class="profile_divs">
+            <h1>Личный кабинет</h1>
+            <div id="profile_cover">
+                <div id="avatar_div">
+                    <div id="avatar"></div>
+                </div>
+                <div id="cover">
+                    <div id="profile_points">
+                        <div class="profile_points_inner">
+                            <img src="~/Images/points.png" />
+                            <p class="points">Баллы: @Model.points</p>
+                            <hr />
+                            <img src="~/Images/cup.png" />
+                            <p class="points">Рейтинг: @Model.myPosition</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <p id="profile_data_name">@Model.Students.surname @Model.Students.name @Model.Students.lastname</p>
+                <p id="profile_data_values">@Model.Students.numStud @Model.Students.Groups.direction-@Model.Students.Groups.spec-@Model.Students.Groups.course@Model.Students.Groups.number @Model.Students.email</p>
+            </div>
+        </div>
+
+        <div class="profile_divs">
+            <div id="profile_achievements">
+                <img />
+                <h2>Достижения</h2>
+                <p class="profile_p">За свою активность в студенческой жизни вы получаете различные достижения. Каждое достижение дарит вам определенное количество баллов, которые можно обменять на приятные плюшки. </p>
+                <div id="profile_achievements_buttons">
+                    <a class="links" href="~/Base/Achievements" title="Достижения">Подробнее</a>
+                    <a class="links" href="~/Base/AddAchievement" title="Добавить достижение">Добавить достижение</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="profile_divs">
+            <div id="profile_awards">
+                <img />
+                <h2>Награды</h2>
+                <p class="profile_p">Здесь вы можете посмотреть список возможных наград, количество баллов, необходимое для получения каждой из них.</p>
+                <a class="links" href="~/Base/Awards" title="Награды">Подробнее</a>
+            </div>
+        </div>
+
+        <div class="profile_divs">
+            <br />
+            <a href="/Base/Login" class="links">Выход</a>
+        </div>
+</body>
+
+

@@ -1,0 +1,22 @@
+﻿@{
+    Layout = "~/Views/BaseStyle.cshtml";
+    ViewBag.Title = "Добавление достижения";
+}
+<body>
+    <div class="divs">
+        <h2>Добавление достижения</h2>
+        <form method="post" action="/Base/AddAchievement">
+            <h4 class="addAchiv_h4">Название</h4>
+            <input class="inputs" type="text" name="title" value="" />
+            <h4 class="addAchiv_h4">Описание</h4>
+            <input class="inputs" type="text" name="description" value="" />
+            <br />
+            <br />
+            <input class="buttons" type="submit" value="Добавить" />
+        </form>
+        <br />
+        <a class="links" href="~/Base/Profile" title="Личный кабинет">На главную</a>
+    </div>
+</body>
+
+

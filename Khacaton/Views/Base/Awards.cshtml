@@ -1,0 +1,51 @@
+﻿@model Khacaton.Models.Awards
+
+@{
+    Layout = "~/Views/BaseStyle.cshtml";
+    ViewBag.Title = "Награды";
+}
+
+<body>
+    <div id="okno">
+        <div id="okno_inner">
+            <h3>Проверьте почту!</h3>
+            <p>Для использования награды вам был отправлен промокод.</p>
+            <a href="#" class="links">Закрыть</a>
+        </div>        
+    </div>
+    <div class="divs_no_back">
+        <div class="divs_titles">
+            <h1>Награды за баллы</h1>
+        </div>
+        <div id="balance_div">
+            <img id="balance_img" src="~/Images/money.png" />
+            <h3>Ваш текущий баланс: @ViewBag.bal</h3>
+        </div>
+        @foreach (var award in Model.lstAwards)
+        {
+            <div class="divs_items">
+                <div id="award_h3">
+                    <h3>@award.title</h3>
+                </div>
+                <div class="award_p">
+                    <p>-</p>
+                </div>
+                <div class="award_p">
+                    <p>@award.description</p>
+                </div>
+                <div id="award_form">
+                    <form method="post" action="/Base/Awards">
+                        <input type="hidden" name="id" value="@award.id" />
+                        <input type="hidden" name="title" value="@award.title" />
+                        <input type="hidden" name="cost" value="@award.cost" />
+                        <a href="#okno">
+                            <input type="submit" value="Обменять на @award.cost очков" class="buttons" />
+                        </a>
+                    </form>
+                </div>
+            </div>
+        }
+        </br>
+        <a class="links" href="~/Base/Profile" title="Личный кабинет">На главную</a>
+    </div>
+</body>
